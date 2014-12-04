@@ -1,0 +1,10 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+#home {
+  float: left;
+  &:hover {
+  color: black;
+  text-decoration: none;
+  }
+}

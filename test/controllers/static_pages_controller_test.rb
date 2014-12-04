@@ -9,8 +9,8 @@ class StaticPagesControllerTest < ActionController::TestCase
     get :home
     assert_response :success
     assert_select "title", "Home | #{@base_title}"
-    assert_select "a[href=?]", "/static_pages/about"
-    assert_select "a[href=?]", "/static_pages/contact"
+    assert_select "a[href=?]", about_path
+    assert_select "a[href=?]", contact_path
   end
 
   test "should get about" do
