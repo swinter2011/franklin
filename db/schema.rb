@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141207173129) do
+ActiveRecord::Schema.define(version: 20141208221004) do
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -23,5 +23,20 @@ ActiveRecord::Schema.define(version: 20141207173129) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+
+  create_table "weeks", force: true do |t|
+    t.integer  "monday"
+    t.integer  "tuesday"
+    t.integer  "wednesday"
+    t.integer  "thursday"
+    t.integer  "friday"
+    t.integer  "saturday"
+    t.integer  "sunday"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "weeks", ["user_id"], name: "index_weeks_on_user_id"
 
 end

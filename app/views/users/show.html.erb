@@ -1,4 +1,43 @@
 <% provide(:title, "Virtues") %>
 <h1> This week let's focus on: </h1>
+<%= render 'layouts/virtues' %>
+<div class="row">
+  <%= form_for @week do |f| %>
+  <div class="col-md-1 col-offset-3">
+    <h5> Monday </h5>
+    <%= f.text_field :monday, class: "form-control" %>
+  </div>
+  <div class="col-md-1">
+    <h5> Tuesday </h5>
+    <%= f.text_field :tuesday, class: "form-control" %>
+  </div>
+  <div class="col-md-1">
+    <h5> Wednesday </h5>
+    <%= f.text_field :wednesday, class: "form-control" %>
+  </div>
+  <div class="col-md-1">
+    <h5> Thursday </h5>
+    <%= f.text_field :thursday, class: "form-control" %>
+  </div>
+  <div class="col-md-1">
+    <h5> Friday </h5>
+    <%= f.text_field :friday, class: "form-control" %>
+  </div>
+  <div class="col-md-1">
+    <h5> Saturday </h5>
+    <%= f.text_field :saturday, class: "form-control" %>
+  </div>
+  <div class="col-md-1">
+    <h5> Sunday </h5>
+    <%= f.text_field :sunday, class: "form-control" %>
+  </div>
+  <div class="col-md-1">
+    <%=f.submit "Save" %>
+  <% end %>
+</div>
+<!-- if 7 days have passed since last Week generated, then produce new form partial>
+render form partial
+Week generated each x day at y time, previous week saved and dislayed
+List of weeks render @weeks --!>
 
-<%= Date::DAYNAMES[Date.today.wday] %>
+
