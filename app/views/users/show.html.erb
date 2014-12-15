@@ -34,6 +34,18 @@
   <div class="col-md-1">
     <%=f.submit "Save" %>
   <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(window).load(function() {
+    $('form').sisyphus(); });
+</script>
+
+<div class="row">
+  <ul>
+    <%= render @weeks %>
+  </ul>
 </div>
 <!-- if 7 days have passed since last Week generated, then produce new form partial>
 render form partial

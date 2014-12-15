@@ -3,12 +3,13 @@ class WeeksController < ApplicationController
   end
 
   def create
+    user = current_user
     @week = current_user.weeks.build(week_params)
     if @week.save
       flash[:success]= "Info saved!"
-      render 'users/show'
+      redirect_to user
     else
-      render 'users/show'
+      redirect_to user
     end
   end
 
