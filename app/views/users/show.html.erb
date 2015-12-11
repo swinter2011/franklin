@@ -1,5 +1,4 @@
 <% provide(:title, "Virtues") %>
-<h1> This week let's focus on: </h1>
 <%= render 'layouts/virtues' %>
 <div class="row">
   <%= form_for @week do |f| %>
@@ -31,6 +30,7 @@
     <h5> Sunday </h5>
     <%= f.text_field :sunday, class: "form-control" %>
   </div>
+     <%= f.hidden_field :virtue, :value => @virtue %>
   <div class="col-md-1">
     <%=f.submit "Save" %>
   <% end %>
@@ -44,7 +44,7 @@
 
 <div class="row">
   <ul>
-    <%= render @weeks %>
+    <%= render @weeks.reverse %>
   </ul>
 </div>
 <!-- if 7 days have passed since last Week generated, then produce new form partial>
