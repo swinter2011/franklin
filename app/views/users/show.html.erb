@@ -4,33 +4,33 @@
   <%= form_for @week do |f| %>
   <div class="col-md-1 col-offset-3">
     <h5> Monday </h5>
-    <%= f.text_field :monday, class: "form-control" %>
+    <%= f.text_field :monday, :value => 0, class: "form-control" %>
   </div>
   <div class="col-md-1">
     <h5> Tuesday </h5>
-    <%= f.text_field :tuesday, class: "form-control" %>
+    <%= f.text_field :tuesday, :value => 0, class: "form-control" %>
   </div>
   <div class="col-md-1">
     <h5> Wednesday </h5>
-    <%= f.text_field :wednesday, class: "form-control" %>
+    <%= f.text_field :wednesday, :value => 0, class: "form-control" %>
   </div>
   <div class="col-md-1">
     <h5> Thursday </h5>
-    <%= f.text_field :thursday, class: "form-control" %>
+    <%= f.text_field :thursday, :value => 0, class: "form-control" %>
   </div>
   <div class="col-md-1">
     <h5> Friday </h5>
-    <%= f.text_field :friday, class: "form-control" %>
+    <%= f.text_field :friday, :value => 0, class: "form-control" %>
   </div>
   <div class="col-md-1">
     <h5> Saturday </h5>
-    <%= f.text_field :saturday, class: "form-control" %>
+    <%= f.text_field :saturday, :value => 0, class: "form-control" %>
   </div>
   <div class="col-md-1">
     <h5> Sunday </h5>
-    <%= f.text_field :sunday, class: "form-control" %>
+    <%= f.text_field :sunday, :value => 0, class: "form-control" %>
   </div>
-     <%= f.hidden_field :virtue, :value => @virtue %>
+     <%= f.hidden_field :virtue, :value => 0, :value => @virtue %>
   <div class="col-md-1">
     <%=f.submit "Save" %>
   <% end %>
@@ -43,9 +43,12 @@
 </script>
 
 <div class="row">
-  <ul>
-    <%= render @weeks.reverse %>
-  </ul>
+  <% if @user.weeks.any? %> 
+    <ol id="weeks-display">
+      <%= render @weeks %>
+    </ol>
+    <%= will_paginate @weeks %>
+  <% end %>
 </div>
 <!-- if 7 days have passed since last Week generated, then produce new form partial>
 render form partial

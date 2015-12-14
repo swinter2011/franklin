@@ -12,7 +12,7 @@ before_filter :init_virtues
   def show
     @user = User.find(params[:id])
     @week = Week.new
-    @weeks = @user.weeks
+    @weeks = @user.weeks.paginate(page: params[:page], per_page: 13)
   end
 
   def new
