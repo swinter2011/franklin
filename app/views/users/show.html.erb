@@ -1,9 +1,10 @@
 <% provide(:title, "Virtues") %>
 <%= render 'layouts/virtues' %>
+<%= render 'layouts/aphorisms' %>
 <div class="row">
   <%= form_for @week do |f| %>
   <div class="col-md-1 col-offset-3">
-    <h5> Monday </h5>
+    <h5>Monday</h5>
     <%= f.text_field :monday, :value => 0, class: "form-control" %>
   </div>
   <div class="col-md-1">
@@ -32,7 +33,7 @@
   </div>
      <%= f.hidden_field :virtue, :value => 0, :value => @virtue %>
   <div class="col-md-1">
-    <%=f.submit "Save" %>
+    <%=f.submit "Submit" %>
   <% end %>
   </div>
 </div>

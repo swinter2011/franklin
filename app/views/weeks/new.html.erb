@@ -1,2 +1,43 @@
-<h1>Weeks#new</h1>
-<p>Find me in app/views/weeks/new.html.erb</p>
+<% provide(:title, "New Week") %>
+<%= render 'layouts/virtues' %>
+<div class="row">
+  <%= form_for @week do |f| %>
+  <div class="col-md-1 col-offset-3">
+    <h5>Monday</h5>
+    <%= f.text_field :monday, :value => 0, class: "form-control" %>
+  </div>
+  <div class="col-md-1">
+    <h5> Tuesday </h5>
+    <%= f.text_field :tuesday, :value => 0, class: "form-control" %>
+  </div>
+  <div class="col-md-1">
+    <h5> Wednesday </h5>
+    <%= f.text_field :wednesday, :value => 0, class: "form-control" %>
+  </div>
+  <div class="col-md-1">
+    <h5> Thursday </h5>
+    <%= f.text_field :thursday, :value => 0, class: "form-control" %>
+  </div>
+  <div class="col-md-1">
+    <h5> Friday </h5>
+    <%= f.text_field :friday, :value => 0, class: "form-control" %>
+  </div>
+  <div class="col-md-1">
+    <h5> Saturday </h5>
+    <%= f.text_field :saturday, :value => 0, class: "form-control" %>
+  </div>
+  <div class="col-md-1">
+    <h5> Sunday </h5>
+    <%= f.text_field :sunday, :value => 0, class: "form-control" %>
+  </div>
+     <%= f.hidden_field :virtue, :value => 0, :value => @virtue %>
+  <div class="col-md-1" id="submit-week">
+    <%=f.submit "Submit", id:"submit-button" %>
+  <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(window).load(function() {
+    $('form').sisyphus(); });
+</script>

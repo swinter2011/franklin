@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'weeks/new'
 
   root 'users#new'
 
@@ -12,6 +11,8 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
+
+  get 'profile' => 'users#show'
 
   resources :weeks
 

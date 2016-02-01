@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
-before_action :logged_in_user, only: [:edit, :update]
-before_action :correct_user, only: [:edit, :update]
+before_action :logged_in_user, only: [:edit, :update, :show]
+before_action :correct_user, only: [:edit, :update, :show]
 before_filter :init_virtues
 
   def init_virtues
     virtues = ['Temperance', 'Silence', 'Order', 'Resolution', 'Frugality', 'Industry',
-               'Sincerity', 'Justice', 'Moderation', 'Cleanliness', 'Tranquility', 'Chastity',               'Humility']
+               'Sincerity', 'Justice', 'Moderation', 'Cleanliness', 'Tranquility', 'Chastity','Humility']
     @virtue =  virtues[Week.count % 12]
   end
 
@@ -24,7 +24,7 @@ before_filter :init_virtues
     if @user.save
       log_in @user
       flash[:success] = "Welcome to Franklin"
-      redirect_to @user
+      redirect_to new_week_path
     else
       render 'new'
     end
