@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="nav navbar-nav navbar-left">
 	  <% if logged_in? %>
-            <a><%= link_to "Franklin", new_week_path, id: "home-button" %></a>
+            <a><%= link_to "Franklin", new_week_path, method: :get,  id: "home-button" %></a>
 	  <% else %>
 	    <a><%= link_to "Franklin", root_path, id: "home-button" %></a>
 	  <% end %>

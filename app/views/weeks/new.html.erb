@@ -1,4 +1,10 @@
 <% provide(:title, "New Week") %>
+
+<script type="text/javascript">
+  $(window).load(function() {
+    $('form').sisyphus(); });
+</script>
+
 <%= render 'layouts/virtues' %>
 <div class="row">
   <%= form_for @week do |f| %>
@@ -36,8 +42,3 @@
   <% end %>
   </div>
 </div>
-
-<script type="text/javascript">
-  $(window).load(function() {
-    $('form').sisyphus(); });
-</script>

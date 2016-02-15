@@ -23,7 +23,8 @@ before_filter :init_virtues
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:success] = "Welcome to Franklin"
+      flash[:success] = "Welcome to Franklin! Franklin allows you to focus on practicing one virtue each week. You can enter the number of times that you failed to practice that virtue in the fields below. Franklin will store that information in the fields below until you commit it to the record books by clicking 'Submit'. Click 'Account' and 'Profile' to check out your results."
+
       redirect_to new_week_path
     else
       render 'new'
