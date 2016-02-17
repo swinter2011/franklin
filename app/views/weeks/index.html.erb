@@ -1,4 +1,30 @@
-<ol id="list-display">
-  <%= render @weeks %>
-</ol>
+<table class="table">
+  <thead>
+    <tr>
+      <th> Virtue </th>
+      <th> Monday </th>
+      <th> Tuesday </th>
+      <th> Wednesday </th>
+      <th> Thursday </th>
+      <th> Friday </th>
+      <th> Saturday </th>
+      <th> Sunday </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @weeks.each do |w| %>
+      <tr>
+        <td><%= w.virtue %></td>
+        <td><%= w.monday %></td>
+        <td><%= w.tuesday %></td>
+        <td><%= w.wednesday %></td>
+        <td><%= w.thursday %></td>
+        <td><%= w.friday %></td>
+        <td><%= w.saturday %></td>
+        <td><%= w.sunday %></td>
+	<td><%= link_to 'Edit', edit_week_path(w) %></td>
+   <% end %>
+</table>
+</div>
+
 

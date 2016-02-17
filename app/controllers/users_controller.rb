@@ -1,13 +1,6 @@
 class UsersController < ApplicationController
 before_action :logged_in_user, only: [:edit, :update, :show]
 before_action :correct_user, only: [:edit, :update, :show]
-before_filter :init_virtues
-
-  def init_virtues
-    virtues = ['Temperance', 'Silence', 'Order', 'Resolution', 'Frugality', 'Industry',
-               'Sincerity', 'Justice', 'Moderation', 'Cleanliness', 'Tranquility', 'Chastity','Humility']
-    @virtue =  virtues[Week.count % 12]
-  end
 
   def show
     @user = User.find(params[:id])
