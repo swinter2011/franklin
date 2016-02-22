@@ -26,11 +26,18 @@ class WeeksController < ApplicationController
   end
 
   def edit
-  @week = Week.find(params[:id])
-
+    @week = Week.find(params[:id])
+    @user = current_user
   end
 
   def update
+    @week = Week.find(params[:id])
+      if @week.update_attributes(week_params)
+        flash[:success] = "Week updated!"
+        redirect_to weeks_path
+      else
+        render 'edit'
+      end
   end
   private
 

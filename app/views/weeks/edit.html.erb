@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-md-1 col-offset-3">
+    <h4> <%= @week.virtue %></h4>
+  </div>
+</div>
+<div class="row">
+  <%= form_for @week do |f| %>
+  <div class="col-md-1 col-offset-3">
+    <h5>Monday</h5>
+    <%= f.text_field :monday, :value => @week.monday, class: "form-control" %>
+  </div>
+  <div class="col-md-1">
+    <h5> Tuesday </h5>
+    <%= f.text_field :tuesday, :value => @week.tuesday, class: "form-control" %>
+  </div>
+  <div class="col-md-1">
+    <h5> Wednesday </h5>
+    <%= f.text_field :wednesday, :value => @week.wednesday, class: "form-control" %>
+  </div>
+  <div class="col-md-1">
+    <h5> Thursday </h5>
+    <%= f.text_field :thursday, :value => @week.thursday, class: "form-control" %>
+  </div>
+  <div class="col-md-1">
+    <h5> Friday </h5>
+    <%= f.text_field :friday, :value => @week.friday, class: "form-control" %>
+  </div>
+  <div class="col-md-1">
+    <h5> Saturday </h5>
+    <%= f.text_field :saturday, :value => @week.saturday, class: "form-control" %>
+  </div>
+  <div class="col-md-1">
+    <h5> Sunday </h5>
+    <%= f.text_field :sunday, :value => @week.sunday, class: "form-control" %>
+  </div>
+  <div class="col-md-1" id="submit-week">
+    <%=f.submit "Submit", id:"submit-button" %>
+  <% end %>
+  </div>
+</div>
