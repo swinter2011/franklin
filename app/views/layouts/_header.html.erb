@@ -26,7 +26,7 @@
 	      </ul>
 	    </li>
 	  <% else %>
-            <li id="sign-in"><button type="button" class="btn btn-default navbar-btn"><%= link_to "Sign In", login_path %></button></li>
+            <li id="sign-in"><%= link_to "Sign In", login_path, {:class=>"btn btn-default navbar-btn"} %></li>
 	  <% end %>
         </ul>
     </div>
