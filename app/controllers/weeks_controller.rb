@@ -3,7 +3,7 @@ class WeeksController < ApplicationController
   def new
     @week = Week.new
     user = current_user
-    @week.set_virtue(current_user.weeks.count % 12)
+    @week.set_virtue(current_user.weeks.count % 13)
     @virtue = @week.virtue
   end
 
@@ -15,7 +15,7 @@ class WeeksController < ApplicationController
   def create
     user = current_user
     @week = current_user.weeks.build(week_params)
-    @week.set_virtue(current_user.weeks.count % 12)
+    @week.set_virtue(current_user.weeks.count % 13)
     @virtue = @week.virtue
     if @week.save
       flash[:success]= "Got it!"
